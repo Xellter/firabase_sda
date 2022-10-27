@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="mb-1">Todo List</h1>
+
+        <ul id="tasksList" class="list-group mb-5"></ul>
+        <form class="mb-3" id="addTaskForm" validate>
+            <label class="form-label">Tytuł:</label>
+            <input class="form-control" type="text" name="title" required>
+            <label class="form-label">Deadline:</label>
+            <input class="form-control mb-3" type="date" name="deadline" min="2022-10-18" required>
+            <button type="submit">Dodaj</button>
+        </form>
+        <form id="editTaskForm" validate>
+            <label class="form-label">Tytuł:</label>
+            <input class="form-control" type="text" name="title" required>
+            <label class="form-label">Deadline:</label>
+            <input class="form-control mb-3" type="date" name="deadline" min="2022-10-18" required>
+            <input class="form-control" type="hidden" name="id" required>
+            <button type="submit">Aktualizuj</button>
+        </form>
+    </div>
+
+
+    <script type="module" src="./index.js"></script>
+</body>
+
+</html>
