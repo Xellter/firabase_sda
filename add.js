@@ -1,5 +1,5 @@
 import { Timestamp, addDoc } from "firebase/firestore";
-export const addTask = (tasksCollection) => {
+export const initAddTaskForm = (tasksCollection) => {
 	const addTaskForm = document.querySelector("#addTaskForm");
 
 	if (addTaskForm) {
@@ -15,10 +15,11 @@ export const addTask = (tasksCollection) => {
 				title: formData.get("title"),
 				deadline: deadlineTimestamp,
 				done: false,
+				order: +formData.get("order"),
 			}).then((result) => {
 				console.log("zadanie zostało dodane do firestore");
 				console.log(result);
-				window.location.reload();
+				// window.location.reload();
 			});
 		});
 	}

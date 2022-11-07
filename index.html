@@ -13,23 +13,77 @@
         <h1 class="mb-1">Todo List</h1>
 
         <ul id="tasksList" class="list-group mb-5"></ul>
-        <form class="mb-3" id="addTaskForm" validate>
-            <label class="form-label">Tytuł:</label>
-            <input class="form-control" type="text" name="title" required>
-            <label class="form-label">Deadline:</label>
-            <input class="form-control mb-3" type="date" name="deadline" min="2022-10-18" required>
-            <button type="submit">Dodaj</button>
-        </form>
-        <form id="editTaskForm" validate>
-            <label class="form-label">Tytuł:</label>
-            <input class="form-control" type="text" name="title" required>
-            <label class="form-label">Deadline:</label>
-            <input class="form-control mb-3" type="date" name="deadline" min="2022-10-18" required>
-            <input class="form-control" type="hidden" name="id" required>
-            <button type="submit">Aktualizuj</button>
-        </form>
-    </div>
 
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addTaskModal">
+            Add task
+        </button>
+
+        <div class="modal fade" id="editTaskModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title fs-5">Edit task</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="editTaskForm" validate>
+                            <label class="form-label">Tytuł:</label>
+                            <input class="form-control" type="text" name="title"
+                                placeholder="Wpisz nazwę nowego zadania..." minlength="3" required />
+                            <label class="form-label">Deadline:</label>
+                            <input class="form-control mb-3" type="date" name="deadline" min="2022-10-18" required />
+                            <label class="form-label">Order:</label>
+                            <input class="form-control mb-3" type="number" name="order" required />
+                            <input type="hidden" name="id" required />
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            Close
+                        </button>
+                        <button form="editTaskForm" type="submit" class="btn btn-primary" data-bs-dismiss="modal"
+                            data-bs-target="#editTaskModal">
+                            Save
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="addTaskModal" tabindex="-1" aria-labelledby="addTaskModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="addTaskModalLabel">
+                            Create new task
+                        </h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="mb-5" id="addTaskForm" validate>
+                            <label class="form-label">Tytuł:</label>
+                            <input class="form-control" type="text" name="title"
+                                placeholder="Wpisz nazwę nowego zadania..." minlength="3" required />
+                            <label class="form-label">Deadline:</label>
+                            <input class="form-control mb-3" type="date" name="deadline" min="2022-10-18" required />
+                            <label class="form-label">Order:</label>
+                            <input class="form-control mb-3" type="number" name="order" value="0" />
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            Close
+                        </button>
+                        <button form="addTaskForm" type="submit" class="btn btn-primary" data-bs-dismiss="modal">
+                            Save
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script type="module" src="./index.js"></script>
 </body>
