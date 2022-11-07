@@ -15,4 +15,3 @@ const tasksCollection = collection(database, "tasks");
 renderTaskList(tasksCollection, database);
 initAddTaskForm(tasksCollection);
 initEditTaskForm(database);
-ś;
