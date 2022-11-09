@@ -12,7 +12,10 @@
     <nav class="navbar bg-light mb-5">
         <div class="container-fluid">
             <a class="navbar-brand">Navbar</a>
-            <button id="signOut" class="btn btn-warning">Sign Out</button>
+            <div>
+                <span id="userName"></span>
+                <button id="signOut" class="btn btn-warning ms-2">Sign Out</button>
+            </div>
         </div>
     </nav>
     <div class="container">
@@ -43,6 +46,8 @@
                             <label class="form-label">Order:</label>
                             <input class="form-control mb-3" type="number" name="order" required />
                             <input type="hidden" name="id" required />
+                            <label class="form-label">Attachment</label>
+                            <input class="form-control" type="file" name="attachment">
                         </form>
                     </div>
                     <div class="modal-footer">
@@ -76,6 +81,8 @@
                             <input class="form-control mb-3" type="date" name="deadline" min="2022-10-18" required />
                             <label class="form-label">Order:</label>
                             <input class="form-control mb-3" type="number" name="order" value="0" />
+                            <label class="form-label">Attachment</label>
+                            <input class="form-control" type="file" name="attachment">
                         </form>
                     </div>
                     <div class="modal-footer">
@@ -90,7 +97,6 @@
             </div>
         </div>
     </div>
-
     <script type="module" src="./index.js"></script>
 </body>
 
